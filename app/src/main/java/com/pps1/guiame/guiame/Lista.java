@@ -1,10 +1,8 @@
 package com.pps1.guiame.guiame;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -23,30 +21,6 @@ import java.util.ArrayList;
 
 public class Lista extends ActionBarActivity
 {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("Inicio","sea crea second activity");
-        setContentView(R.layout.activity_lista);
-        Thread tr = new Thread(){
-            @Override
-            public void run(){
-                Log.d("run","comienzo hilo!");
-                final String Resultado = leer();
-                Log.d("FIN!","RESULATAODOOO "+Resultado);
-                runOnUiThread(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                cargaListado(obtDatosJSON(Resultado));
-                                Log.d("carga datos!","cargadooo");
-                            }
-                        });
-            }
-        };
-        tr.start();
-    }
 
     public String leer(){
         HttpClient cliente = new DefaultHttpClient();
@@ -101,5 +75,29 @@ public class Lista extends ActionBarActivity
                 new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,datos);
         ListView listado = (ListView) findViewById(R.id.listView1);
         listado.setAdapter(adaptador);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("Inicio","sea crea second activity");
+        setContentView(R.layout.activity_lista);
+        Thread tr = new Thread(){
+            @Override
+            public void run(){
+                Log.d("run","comienzo hilo!");
+                final String Resultado = leer();
+                Log.d("FIN!","RESULATAODOOO "+Resultado);
+                runOnUiThread(
+                        new Runnable() {
+                            @Override
+                            public void run() {
+                                cargaListado(obtDatosJSON(Resultado));
+                                Log.d("carga datos!","cargadooo");
+                            }
+                        });
+            }
+        };
+        tr.start();
     }
 }
