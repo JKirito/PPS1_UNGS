@@ -1,14 +1,18 @@
 package com.pps1.guiame.guiame;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by javi on 25/03/15.
  */
 public class Registrador {
     private String nombreYApellido;
-    private Integer dni;
+    private String dni;
     private String mail;
     private String pass;
     private String pass2;
@@ -21,11 +25,11 @@ public class Registrador {
     private final String MSJ_PASS_NULL = "Debe ingresar la contraseña";
     private final String MSJ_PASS_NOCOINCIDE = "Las contraseñas no coinciden";
 
-    private final String PHP_NAME_REGISTRADOR = "registrarUsuario";
+    private final String PHP_NAME_REGISTRADOR = "registrarUsuario.php";
     private final String PHP_RESULT_OK = "OK";
 
 
-    public Registrador(String nombreYApellido, Integer dni, String mail, String pass, String pass2)
+    public Registrador(String nombreYApellido, String dni, String mail, String pass, String pass2)
     {
         this.nombreYApellido = nombreYApellido;
         this.dni = dni;
@@ -34,7 +38,7 @@ public class Registrador {
         this.pass2 = pass2;
     }
     
-    private List<String> validarDatos()
+    public List<String> validarDatos()
     {
         List<String> errores = new ArrayList<String>();
         if(this.nombreYApellido == null || this.nombreYApellido.replaceAll("/s","").length() == 0)
@@ -45,7 +49,7 @@ public class Registrador {
         {
             errores.add(MSJ_NOM_APELL_CORTO);
         }
-        if(dni == null || new String(dni+"").length() != 8)
+        if(dni == null || dni.length() != 8)
         {
             errores.add(MSJ_DNI_INVALIDO);
         }
@@ -77,11 +81,17 @@ public class Registrador {
             return errores;
         }
 
-        String result = Utils.getPHPResult(PHP_NAME_REGISTRADOR);
+        //La key del map deben ser los nombres de los campos en la tabla
+        Map<String, String> datos = new HashMap<String, String>();
+        datos.put("nombre",nombreYApellido);
+        datos.put("mail",mail);
+        datos.put("dni",dni);
+        datos.put("contrasena",pass);
 
-        if(!result.equals(PHP_RESULT_OK)){
-            errores.add("ERROR al registrar usuario");
-        }
+        String result = Utils.enviarPost(datos, PHP_NAME_REGISTRADOR);
+
+        //TODO: qué hago con el result?
+        Log.d("result post", result);
 
         return errores;
     }
