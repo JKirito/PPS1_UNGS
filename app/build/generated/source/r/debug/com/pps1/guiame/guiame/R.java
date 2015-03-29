@@ -1338,12 +1338,11 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f09004e;
+        public static final int action_settings=0x7f09004c;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090016;
         public static final int beginning=0x7f090013;
         public static final int btnAceptar=0x7f090041;
-        public static final int btnBusqueda=0x7f09004d;
         public static final int btnCancelar=0x7f090042;
         public static final int btnIngresar=0x7f090047;
         public static final int btnRegistrarse=0x7f090046;
@@ -1393,7 +1392,6 @@ containing a value of this type.
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000b;
         public static final int title=0x7f090027;
-        public static final int txtBusquedaj=0x7f09004c;
         public static final int txtContraseña=0x7f090040;
         public static final int txtDni=0x7f09003f;
         public static final int txtMail=0x7f09004a;
@@ -1433,10 +1431,10 @@ containing a value of this type.
         public static final int abc_search_view=0x7f040014;
         public static final int abc_simple_dropdown_hint=0x7f040015;
         public static final int activity_ingreso=0x7f040016;
-        public static final int activity_lista=0x7f040017;
-        public static final int activity_pantalla_principal=0x7f040018;
-        public static final int activity_registro=0x7f040019;
-        public static final int activity_vista=0x7f04001a;
+        public static final int activity_lista_materias=0x7f040017;
+        public static final int activity_lista_materias_usuario=0x7f040018;
+        public static final int activity_pantalla_principal=0x7f040019;
+        public static final int activity_registro=0x7f04001a;
         public static final int support_simple_spinner_dropdown_item=0x7f04001b;
     }
     public static final class menu {
@@ -1471,12 +1469,12 @@ containing a value of this type.
         public static final int aceptar=0x7f0b0010;
         public static final int action_settings=0x7f0b0011;
         public static final int app_name=0x7f0b0012;
-        public static final int cancelar=0x7f0b0013;
-        public static final int contraseña=0x7f0b0014;
-        public static final int dni=0x7f0b0015;
-        public static final int ingresar=0x7f0b0016;
-        public static final int mail=0x7f0b0017;
-        public static final int materia=0x7f0b0018;
+        public static final int buscar=0x7f0b0013;
+        public static final int cancelar=0x7f0b0014;
+        public static final int contraseña=0x7f0b0015;
+        public static final int dni=0x7f0b0016;
+        public static final int ingresar=0x7f0b0017;
+        public static final int mail=0x7f0b0018;
         public static final int nombre=0x7f0b0019;
         public static final int registrarse=0x7f0b001a;
         public static final int repetirContraseña=0x7f0b001b;

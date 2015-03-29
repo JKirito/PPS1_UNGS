@@ -93,19 +93,19 @@ ADDED from AndroidManifest.xml:32:9
 		ADDED from AndroidManifest.xml:34:13
 	android:name
 		ADDED from AndroidManifest.xml:33:13
-activity#com.pps1.guiame.guiame.Vista
+activity#com.pps1.guiame.guiame.Ingreso
 ADDED from AndroidManifest.xml:36:9
 	android:label
 		ADDED from AndroidManifest.xml:38:13
 	android:name
 		ADDED from AndroidManifest.xml:37:13
-activity#com.pps1.guiame.guiame.Ingreso
+activity#com.pps1.guiame.guiame.ListaMaterias
 ADDED from AndroidManifest.xml:40:9
 	android:label
 		ADDED from AndroidManifest.xml:42:13
 	android:name
 		ADDED from AndroidManifest.xml:41:13
-activity#com.pps1.guiame.guiame.ListaMaterias
+activity#com.pps1.guiame.guiame.ListaMateriasUsuario
 ADDED from AndroidManifest.xml:44:9
 	android:label
 		ADDED from AndroidManifest.xml:46:13

@@ -7,7 +7,7 @@
     <string name="nombre">Nombre y Apellido</string>
     <string name="contraseña">Contraseña</string>
     <string name="repetirContraseña">Repita la contraseña</string>
-    <string name="materia">Ingrese el nombre de la materia:</string>
+    <string name="buscar">Buscar</string>
 
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>

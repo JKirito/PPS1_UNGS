@@ -49,7 +49,7 @@ public class Principal extends Activity
             {
                 //Creamos el Intent
                 Intent intent =
-                        new Intent(Principal.this, Vista.class);
+                        new Intent(Principal.this, ListaMaterias.class);
                 startActivity(intent);
             }
         });

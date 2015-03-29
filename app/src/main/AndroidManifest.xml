@@ -34,15 +34,15 @@
             android:label="@string/title_activity_registro" >
         </activity>
         <activity
-            android:name=".Vista"
-            android:label="@string/title_activity_vista" >
-        </activity>
-        <activity
             android:name=".Ingreso"
             android:label="@string/title_activity_ingreso" >
         </activity>
         <activity
             android:name=".ListaMaterias"
+            android:label="@string/title_activity_lista" >
+        </activity>
+        <activity
+            android:name=".ListaMateriasUsuario"
             android:label="@string/title_activity_lista" >
         </activity>
 
