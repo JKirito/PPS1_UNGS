@@ -42,7 +42,7 @@
             android:label="@string/title_activity_ingreso" >
         </activity>
         <activity
-            android:name=".Lista"
+            android:name=".ListaMaterias"
             android:label="@string/title_activity_lista" >
         </activity>
 

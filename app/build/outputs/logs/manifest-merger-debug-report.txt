@@ -105,7 +105,7 @@ ADDED from AndroidManifest.xml:40:9
 		ADDED from AndroidManifest.xml:42:13
 	android:name
 		ADDED from AndroidManifest.xml:41:13
-activity#com.pps1.guiame.guiame.Lista
+activity#com.pps1.guiame.guiame.ListaMaterias
 ADDED from AndroidManifest.xml:44:9
 	android:label
 		ADDED from AndroidManifest.xml:46:13

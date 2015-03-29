@@ -2,7 +2,6 @@ package com.pps1.guiame.guiame;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 
 import org.json.JSONArray;
 
@@ -66,7 +65,6 @@ public class Ingresador extends ActionBarActivity
         datos.put("contrasena",pass);
 
         String result = Utils.enviarPost(datos, PHP_NAME_INGRESADOR);
-        Log.d("result post", result);
 
         return errores;
     }
@@ -85,7 +83,6 @@ public class Ingresador extends ActionBarActivity
                 listado.add(cantidadRegistrados);
             }
 
-            Log.d("isValidOooOOo",cantidadRegistrados);
             if( cantidadRegistrados.toString().equals("1"))//Si hay un registrado que tiene ese dni
             {                                               //y contraseña, entonces es valido
                 isValido = true;

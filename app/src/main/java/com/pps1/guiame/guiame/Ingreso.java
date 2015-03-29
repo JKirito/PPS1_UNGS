@@ -63,7 +63,7 @@ public class Ingreso extends ActionBarActivity
 
                                 ingresador.ingresarUsuario();
 
-                                Intent intent = new Intent(Ingreso.this, Lista.class);
+                                Intent intent = new Intent(Ingreso.this, ListaMaterias.class);
                                 startActivity(intent);
                             }
                         });

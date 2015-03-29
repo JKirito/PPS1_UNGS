@@ -50,7 +50,7 @@
             android:label="@string/title_activity_ingreso" >
         </activity>
         <activity
-            android:name="com.pps1.guiame.guiame.Lista"
+            android:name="com.pps1.guiame.guiame.ListaMaterias"
             android:label="@string/title_activity_lista" >
         </activity>
     </application>
