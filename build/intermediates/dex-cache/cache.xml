@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-e70fd32faf02de8cb875e1444f9683aaeffca41c.jar" />
-    </item>
-    <item
-        jar="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jar="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\classes-7119500ffe69f651f181c66acc2aa2929c6de329.jar" />
+        <dex dex="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/pre-dexed/debug/classes-0429d0a18d3af0dceea135d919815a7fd38f12bd.jar" />
     </item>
     <item
-        jar="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\classes-357b800dac693bc2975f2c0f6d0e35d04d2d3320.jar" />
-    </item>
-    <item
-        jar="C:\Program Files\Android\Android Studio\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="/home/javi/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-dea4348d30921d5f934ede470c40682fd8784866.jar" />
+        <dex dex="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-72fc98b4ea910ffc195f8f6559d74fb86aa6266e.jar" />
+    </item>
+    <item
+        jar="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-6fdb72ee158a8b46ff39ce8347126c2bfbb8bc23.jar" />
+    </item>
+    <item
+        jar="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/home/javi/AndroidStudioProjects/Guiame/app/build/intermediates/pre-dexed/debug/classes-b973b6a30f289bc39adcb008a600d820b665eed7.jar" />
     </item>
 
 </items>
