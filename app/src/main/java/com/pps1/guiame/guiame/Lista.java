@@ -22,6 +22,28 @@ import java.util.ArrayList;
 public class Lista extends ActionBarActivity
 {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        Log.d("Inicio","sea crea second activity");
+        setContentView(R.layout.activity_lista);
+        Thread tr = new Thread(){
+            @Override
+            public void run(){
+                final String Resultado = leer();
+                runOnUiThread(
+                        new Runnable() {
+                            @Override
+                            public void run() {
+                                cargaListado(obtDatosJSON(Resultado));
+                            }
+                        });
+            }
+        };
+        tr.start();
+    }
+
     public String leer(){
         HttpClient cliente = new DefaultHttpClient();
         HttpContext contexto = new BasicHttpContext();
@@ -29,12 +51,11 @@ public class Lista extends ActionBarActivity
         Log.d("LEER HTTPGET","leeeer "+httpget );
         String resultado=null;
         try {
-            Log.d("antes del response ","saaaaaa");
             HttpResponse response = cliente.execute(httpget,contexto);
             HttpEntity entity = response.getEntity();
             Log.d("ENTITY",httpget+"");
             resultado = EntityUtils.toString(entity, "UTF-8");
-            Log.d("resulatadoooo",resultado);
+            Log.d("resulatadoooo!!",resultado);
         } catch (Exception e) {
             Log.d("EXCEPTION",e+"");
             // TODO: handle exception
@@ -42,24 +63,19 @@ public class Lista extends ActionBarActivity
         return resultado;
     }
 
-    public ArrayList<String> obtDatosJSON(String response){
+    public ArrayList<String> obtDatosJSON(String response)
+    {
         ArrayList<String> listado= new ArrayList<String>();
         try {
             JSONArray json= new JSONArray(response);
-            String texto="";
-            for (int i=0; i<json.length();i++){
-               /* texto = json.getJSONObject(i).getString("id") +" - "+
-                        json.getJSONObject(i).getString("nombre") +" - "+
-                        json.getJSONObject(i).getString("apellido") +" - "+
-                        json.getJSONObject(i).getString("mail");*/
+            String texto;
+            for (int i=0; i<json.length();i++)
+            {
                 texto = json.getJSONObject(i).getString("id") +" - "+
                         json.getJSONObject(i).getString("nombre") +" - "+
                         json.getJSONObject(i).getString("mail") +" - "+
                         json.getJSONObject(i).getString("dni") +" - "+
                         json.getJSONObject(i).getString("contrasena");
-                /*texto = json.getJSONObject(i).getString("id") +" - "+
-                        json.getJSONObject(i).getString("codigo") +" - "+
-                        json.getJSONObject(i).getString("materia");*/
                 Log.d("texto",texto);
                 listado.add(texto);
             }
@@ -75,29 +91,5 @@ public class Lista extends ActionBarActivity
                 new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,datos);
         ListView listado = (ListView) findViewById(R.id.listView1);
         listado.setAdapter(adaptador);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("Inicio","sea crea second activity");
-        setContentView(R.layout.activity_lista);
-        Thread tr = new Thread(){
-            @Override
-            public void run(){
-                Log.d("run","comienzo hilo!");
-                final String Resultado = leer();
-                Log.d("FIN!","RESULATAODOOO "+Resultado);
-                runOnUiThread(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                cargaListado(obtDatosJSON(Resultado));
-                                Log.d("carga datos!","cargadooo");
-                            }
-                        });
-            }
-        };
-        tr.start();
     }
 }

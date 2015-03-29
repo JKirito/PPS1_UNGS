@@ -1,12 +1,18 @@
 package com.pps1.guiame.guiame;
 
-import android.app.ProgressDialog;
+/**
+ * Created by Agustina on 25/03/2015.
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import java.util.List;
+
 
 public class Ingreso extends ActionBarActivity
 {
@@ -15,10 +21,6 @@ public class Ingreso extends ActionBarActivity
     private EditText txtContraseña;
     private Button btnAceptar;
     private Button btnCancelar;
-
-    boolean result_back;
-    private ProgressDialog pDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,11 +40,44 @@ public class Ingreso extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(Ingreso.this, Lista.class);
-                startActivity(intent);
 
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run()
+                    {
+                    try
+                    {
+                        Ingreso.this.runOnUiThread(new Runnable()
+                        {
+                            public void run()
+                            {
+                                Ingresador ingresador = new Ingresador(txtDni.getText().toString(), txtContraseña.getText().toString());
+                                List<String> errores = ingresador.validarDatos();
+
+                                if(errores.size() > 0)
+                                {
+                                    Toast.makeText(getApplicationContext(),
+                                            "Usuario incorrecto!", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+
+                                ingresador.ingresarUsuario();
+
+                                Intent intent = new Intent(Ingreso.this, Lista.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    }
+                });
+                thread.start();
             }
         });
+
         btnCancelar.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -3,6 +3,7 @@ package com.pps1.guiame.guiame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -36,6 +37,7 @@ public class Principal extends Activity
             @Override
             public void onClick(View v)
             {
+                Log.d("BOTON ACEPTAR", "INGRESOOOOO!!");
                 //Creamos el Intent
                 Intent intent =
                         new Intent(Principal.this, Ingreso.class);

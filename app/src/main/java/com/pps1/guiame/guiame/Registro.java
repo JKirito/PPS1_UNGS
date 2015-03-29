@@ -3,6 +3,7 @@ package com.pps1.guiame.guiame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,11 +53,7 @@ public class Registro extends ActionBarActivity
             public void onClick(View v)
             {
 
-                Thread thread = new Thread(new Runnable(){
-                    @Override
-                    public void run() {
-                        try {
-                            Registrador registrador = new Registrador(nombreApellido.getText().toString(),dni.getText().toString(), mail.getText().toString(), pass.getText().toString(), pass2.getText().toString());
+                final Registrador registrador = new Registrador(nombreApellido.getText().toString(),dni.getText().toString(), mail.getText().toString(), pass.getText().toString(), pass2.getText().toString());
                             List<String> errores = registrador.validarDatos();
 
                             if(errores.size() > 0){
@@ -64,7 +61,10 @@ public class Registro extends ActionBarActivity
                                         Toast.LENGTH_LONG).show();
                                 return;
                             }
-
+                Thread thread = new Thread(new Runnable(){
+                    @Override
+                    public void run() {
+                        try {
                             registrador.registrarDatos();
 
                             Intent intent = new Intent(Registro.this, Ingreso.class);

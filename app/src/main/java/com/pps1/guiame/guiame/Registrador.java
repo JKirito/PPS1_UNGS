@@ -10,7 +10,8 @@ import java.util.Map;
 /**
  * Created by javi on 25/03/15.
  */
-public class Registrador {
+public class Registrador
+{
     private String nombreYApellido;
     private String dni;
     private String mail;
@@ -56,17 +57,23 @@ public class Registrador {
         if(this.mail == null){
             errores.add(MSJ_MAIL_INVALIDO);
         }else{
-            if(!MailValidator.validateEmail(this.mail)){
+            if(!MailValidator.validateEmail(this.mail))
+            {
                 errores.add(MSJ_MAIL_INVALIDO);
             }
         }
 
-        if(this.pass == null){
+        if(this.pass == null)
+        {
             errores.add(MSJ_PASS_NULL);
-        }else{
-            if(!this.pass.equals(pass2)){
+        }
+        else
+        {
+            if(!this.pass.equals(pass2))
+            {
                 errores.add(MSJ_PASS_NOCOINCIDE);
-            }else if(this.pass.length()<4){
+            }else if(this.pass.length()<4)
+            {
                 errores.add(MSJ_PASS_CORTA);
             }
         }
@@ -74,10 +81,12 @@ public class Registrador {
     return errores;
     }
 
-    public List<String> registrarDatos(){
+    public List<String> registrarDatos()
+    {
         List<String> errores = this.validarDatos();
 
-        if(errores.size() > 0){
+        if(errores.size() > 0)
+        {
             return errores;
         }
 
