@@ -21,7 +21,7 @@ public class Ingresador extends ActionBarActivity
     private final String MSJ_DNI_INVALIDO = "DNI invalido";
     private final String MSJ_PASS_NULL = "Debe ingresar la contraseña";
 
-    private final String PHP_NAME_REGISTRADOR = "login.php";
+    private final String PHP_NAME_INGRESADOR= "login.php";
 
 
     @Override
@@ -65,7 +65,7 @@ public class Ingresador extends ActionBarActivity
         datos.put("dni",dni);
         datos.put("contrasena",pass);
 
-        String result = Utils.enviarPost(datos, PHP_NAME_REGISTRADOR);
+        String result = Utils.enviarPost(datos, PHP_NAME_INGRESADOR);
         Log.d("result post", result);
 
         return errores;
@@ -111,7 +111,7 @@ public class Ingresador extends ActionBarActivity
             @Override
             public void run()
             {
-                final String resultado = Utils.getPHPResult(PHP_NAME_REGISTRADOR);
+                final String resultado = Utils.getPHPResult(PHP_NAME_INGRESADOR);
                 runOnUiThread(
                         new Runnable()
                         {
