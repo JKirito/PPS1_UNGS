@@ -20,10 +20,10 @@ import java.util.ArrayList;
 
 public class ListaMateriasUsuario extends ActionBarActivity
 {
-
     private final String PHP_NAME_LISTADOR = "listarMateriasUsuario.php";
     private ListView listaMaterias;
     ArrayAdapter<String> adaptador;
+    private EditText dni;
     EditText searchBox;
 
     @Override
@@ -31,6 +31,7 @@ public class ListaMateriasUsuario extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_materias_usuario);
+        dni = (EditText) findViewById(R.id.txtDni);
         Thread tr = new Thread()
         {
             @Override
