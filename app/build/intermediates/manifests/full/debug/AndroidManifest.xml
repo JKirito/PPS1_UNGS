@@ -53,6 +53,10 @@
             android:name="com.pps1.guiame.guiame.ListaMateriasUsuario"
             android:label="@string/title_activity_lista" >
         </activity>
+        <activity
+            android:name="com.pps1.guiame.guiame.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>

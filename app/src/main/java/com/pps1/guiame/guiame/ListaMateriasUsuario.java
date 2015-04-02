@@ -23,7 +23,6 @@ public class ListaMateriasUsuario extends ActionBarActivity
     private final String PHP_NAME_LISTADOR = "listarMateriasUsuario.php";
     private ListView listaMaterias;
     ArrayAdapter<String> adaptador;
-    private EditText dni;
     EditText searchBox;
 
     @Override
@@ -31,17 +30,19 @@ public class ListaMateriasUsuario extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_materias_usuario);
-        dni = (EditText) findViewById(R.id.txtDni);
         Thread tr = new Thread()
         {
             @Override
             public void run(){
-                final String resultado = Utils.getPHPResult(PHP_NAME_LISTADOR);
+                String dni = getIntent().getExtras().get("dni") != null ? getIntent().getExtras().get("dni").toString() : "";
+                getIntent().getExtras().clear();
+                Listador listador = new Listador(dni);
+                final ArrayList<String> materias = listador.getListadoMateriasUsuario();
                 runOnUiThread(
                         new Runnable() {
                             @Override
                             public void run() {
-                                cargaListado(obtDatosJSON(resultado));
+                                cargaListado(materias);
                             }
                         });
             }
@@ -83,10 +84,10 @@ public class ListaMateriasUsuario extends ActionBarActivity
             String texto;
             for (int i=0; i<json.length();i++)
             {
-                texto = json.getJSONObject(i).getString("nombre") +" - "+
+                texto = json.getJSONObject(i).getString("alias") +" - "+
                         json.getJSONObject(i).getString("comision") +" - "+
-                        json.getJSONObject(i).getString("dia") +" - "+
-                        json.getJSONObject(i).getString("horaInicio") +" - "+
+                        json.getJSONObject(i).getString("dia") +" de "+
+                        json.getJSONObject(i).getString("horaInicio") +" a "+
                         json.getJSONObject(i).getString("horaFin") +" - "+
                         json.getJSONObject(i).getString("nombre");
                 Log.d("texto", texto);

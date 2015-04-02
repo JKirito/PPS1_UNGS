@@ -56,6 +56,7 @@ public class Utils
         HttpPost httpPost = new HttpPost(URL+phpName);
         Log.d("url",URL+phpName);
         HttpResponse response = null;
+        String resultado = "";
         try
         {
             List<NameValuePair> params = new ArrayList<NameValuePair>(3);
@@ -66,11 +67,14 @@ public class Utils
             }
             httpPost.setEntity(new UrlEncodedFormEntity(params));
             response = httpClient.execute(httpPost, localContext);
+            HttpEntity entity = response.getEntity();
+            resultado = EntityUtils.toString(entity, "UTF-8");
+            Log.d("RESULTADO",resultado);
         } catch (Exception e)
         {
             Log.d("Exception enviarPost", e+"");
         }
 
-        return response != null ? response.toString() : "";
+        return resultado;
     }
 }

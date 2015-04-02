@@ -1441,10 +1441,11 @@ containing a value of this type.
         public static final int menu_ingreso=0x7f0d0000;
         public static final int menu_insertar_usuario=0x7f0d0001;
         public static final int menu_lista=0x7f0d0002;
-        public static final int menu_pantalla_principal=0x7f0d0003;
-        public static final int menu_post=0x7f0d0004;
-        public static final int menu_registro=0x7f0d0005;
-        public static final int menu_vista=0x7f0d0006;
+        public static final int menu_main=0x7f0d0003;
+        public static final int menu_pantalla_principal=0x7f0d0004;
+        public static final int menu_post=0x7f0d0005;
+        public static final int menu_registro=0x7f0d0006;
+        public static final int menu_vista=0x7f0d0007;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1473,19 +1474,21 @@ containing a value of this type.
         public static final int cancelar=0x7f0b0014;
         public static final int contraseña=0x7f0b0015;
         public static final int dni=0x7f0b0016;
-        public static final int ingresar=0x7f0b0017;
-        public static final int mail=0x7f0b0018;
-        public static final int nombre=0x7f0b0019;
-        public static final int registrarse=0x7f0b001a;
-        public static final int repetirContraseña=0x7f0b001b;
-        public static final int title_activity_incresoCopia=0x7f0b001c;
-        public static final int title_activity_ingreso=0x7f0b001d;
-        public static final int title_activity_lista=0x7f0b001e;
-        public static final int title_activity_pantalla_principal=0x7f0b001f;
-        public static final int title_activity_post=0x7f0b0020;
-        public static final int title_activity_registro=0x7f0b0021;
-        public static final int title_activity_vista=0x7f0b0022;
-        public static final int vista=0x7f0b0023;
+        public static final int hello_world=0x7f0b0017;
+        public static final int ingresar=0x7f0b0018;
+        public static final int mail=0x7f0b0019;
+        public static final int nombre=0x7f0b001a;
+        public static final int registrarse=0x7f0b001b;
+        public static final int repetirContraseña=0x7f0b001c;
+        public static final int title_activity_incresoCopia=0x7f0b001d;
+        public static final int title_activity_ingreso=0x7f0b001e;
+        public static final int title_activity_lista=0x7f0b001f;
+        public static final int title_activity_main=0x7f0b0020;
+        public static final int title_activity_pantalla_principal=0x7f0b0021;
+        public static final int title_activity_post=0x7f0b0022;
+        public static final int title_activity_registro=0x7f0b0023;
+        public static final int title_activity_vista=0x7f0b0024;
+        public static final int vista=0x7f0b0025;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0c0000;

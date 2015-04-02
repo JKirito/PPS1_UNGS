@@ -17,8 +17,6 @@ import android.widget.EditText;
 
 public class ListaMaterias extends ActionBarActivity
 {
-
-    private final String PHP_NAME_LISTADOR = "listarMaterias.php";
     private ListView listaMaterias;
     ArrayAdapter<String> adaptador;
     EditText searchBox;
@@ -28,16 +26,17 @@ public class ListaMaterias extends ActionBarActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_materias);
+        final Listador listador = new Listador();
         Thread tr = new Thread()
         {
             @Override
             public void run(){
-                final String resultado = Utils.getPHPResult(PHP_NAME_LISTADOR);
+                final ArrayList<String> materias = listador.getListadoMaterias();
                 runOnUiThread(
                         new Runnable() {
                             @Override
                             public void run() {
-                                cargaListado(obtDatosJSON(resultado));
+                                mostrarItems(materias);
                             }
                         });
             }
@@ -71,34 +70,12 @@ public class ListaMaterias extends ActionBarActivity
 
     }
 
-    public ArrayList<String> obtDatosJSON(String response)
-    {
-        ArrayList<String> listado= new ArrayList<String>();
-        try {
-            JSONArray json= new JSONArray(response);
-            String texto;
-            for (int i=0; i<json.length();i++)
-            {
-                texto = json.getJSONObject(i).getString("nombre") +" - "+
-                        json.getJSONObject(i).getString("comision") +" - "+
-                        json.getJSONObject(i).getString("horaInicio") +" - "+
-                        json.getJSONObject(i).getString("horaFin") +" - "+
-                        json.getJSONObject(i).getString("nombre");
-                Log.d("texto",texto);
-                listado.add(texto);
-            }
-        }
-        catch (Exception e)
-        {
-            Log.d("EXCEPCION obtDatosJSON", e+"");
-        }
-        return listado;
-    }
-
-    public void cargaListado(ArrayList<String> datos)
+    //Esto tambien deberia ir a Listador pero no se puede pasar el ListView
+    public void mostrarItems(ArrayList<String> datos)
     {
         adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,datos);
         listaMaterias = (ListView) findViewById(R.id.listaMaterias);
         listaMaterias.setAdapter(adaptador);
+
     }
 }

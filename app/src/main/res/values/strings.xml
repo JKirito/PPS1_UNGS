@@ -22,4 +22,7 @@
     <string name="title_activity_lista">Lista</string>
     <string name="title_activity_post">Post</string>
     <string name="title_activity_incresoCopia">IngresoCopia</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

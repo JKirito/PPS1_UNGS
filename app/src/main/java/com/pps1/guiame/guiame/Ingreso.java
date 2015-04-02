@@ -40,38 +40,41 @@ public class Ingreso extends ActionBarActivity
             @Override
             public void onClick(View v)
             {
-
+                final Ingresador ingresador = new Ingresador(txtDni.getText().toString(), txtContraseña.getText().toString());
                 Thread thread = new Thread(new Runnable(){
                     @Override
                     public void run()
                     {
-                    try
-                    {
-                        Ingreso.this.runOnUiThread(new Runnable()
+                        try
                         {
-                            public void run()
+                            final List<String> errores = ingresador.ingresarUsuario();
+
+                            if(errores.size() > 0)
                             {
-                                Ingresador ingresador = new Ingresador(txtDni.getText().toString(), txtContraseña.getText().toString());
-                                List<String> errores = ingresador.validarDatos();
+                                runOnUiThread(
+                                        new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getApplicationContext(),
+                                                        errores.get(0), Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
 
-                                if(errores.size() > 0)
-                                {
-                                    Toast.makeText(getApplicationContext(),
-                                            "Usuario incorrecto!", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
-
-                                ingresador.ingresarUsuario();
-
-                                Intent intent = new Intent(Ingreso.this, ListaMateriasUsuario.class);
-                                startActivity(intent);
+                                return;
                             }
-                        });
-                    }
-                    catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("dni", txtDni.getText().toString());
+
+                            Intent intent = new Intent(getApplicationContext(), ListaMateriasUsuario.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 });
                 thread.start();
@@ -90,4 +93,17 @@ public class Ingreso extends ActionBarActivity
             }
         });
     }
+
+    @Override
+    public void onResume()
+   {
+       super.onResume();
+
+       txtDni.setText("");
+       txtContraseña.setText("");
+    }
+
+
+
+
 }
