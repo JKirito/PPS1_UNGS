@@ -24,7 +24,10 @@
         android:id="@+id/listaMaterias"
         android:background="@color/bg_login"
         android:layout_width="wrap_content"
+        android:choiceMode="singleChoice"
+        android:listSelector="#003366"
         android:layout_height="434dp">
     </ListView>
+
 
 </LinearLayout>

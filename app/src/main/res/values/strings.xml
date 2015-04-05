@@ -25,4 +25,7 @@
     <string name="title_activity_main">MainActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_mapa">Mapa</string>
+    <string name="title_activity_mapa_v2">Map</string>
+    <string name="title_activity_mapa_v3">MapaV3</string>
 </resources>

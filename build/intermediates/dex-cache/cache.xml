@@ -16,6 +16,13 @@
         <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\classes-7119500ffe69f651f181c66acc2aa2929c6de329.jar" />
     </item>
     <item
+        jar="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\pre-dexed\debug\classes-ec00773b20d83febdf6a32b5911caf56de70909f.jar" />
+    </item>
+    <item
         jar="D:\Mis cosas\Universidad\Android\Guiame\trunk\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
         jumboMode="false"
         revision="22.0.0"

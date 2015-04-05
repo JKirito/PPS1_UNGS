@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import org.json.JSONArray;
-
-import java.util.ArrayList;
-
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+import android.view.View.OnClickListener;
+import java.util.ArrayList;
 
 
 public class ListaMaterias extends ActionBarActivity
@@ -69,6 +68,7 @@ public class ListaMaterias extends ActionBarActivity
         });
 
     }
+
 
     //Esto tambien deberia ir a Listador pero no se puede pasar el ListView
     public void mostrarItems(ArrayList<String> datos)
